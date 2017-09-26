@@ -21,7 +21,7 @@ class Student
   def add_student_attributes(attributes_hash) # take in a hash whose key/value pairs from Scraper.scrape_profile_page, iterate over the given hash and use metaprogramming to assign student attributes and values in key/value pairs of the hash. Use #send to do this.
     #binding.pry
     attributes_hash.each do |key, value|
-      self.send("#{key}=", value)
+      self.send("#{key}=", value) #"#{key}=" is the method name reflecting the attr_accessor methods
     end
     #return value should be student itself. use self
   end

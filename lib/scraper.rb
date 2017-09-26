@@ -5,7 +5,7 @@ class Scraper
 
   def self.scrape_index_page(index_url) #returns an array of hashes in which each hash represents one student
     index_page = Nokogiri::HTML(open(index_url)) #scraped_students = Scraper.scrape_index_page(index_url)
-    #binding.pry
+    binding.pry
     index_page.css(".student-card").collect.with_index do |cards, idx| #list of student profile
       scraped_students = {} #expect(scraped_students).to be_a(Array)
       scraped_students[:name] = index_page.css(".student-name")[idx].text #name of individual student
